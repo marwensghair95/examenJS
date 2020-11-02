@@ -43,10 +43,10 @@ formAdmin.addEventListener("submit" ,(e)=> {
                    
                     <td> <button class="delete " onclick = "deleteUser(${users.idUser})"  >DELETE </button> </td>
                     
-                    <td> <button class="modifer " onclick = "zonModif(${users.idUser})">show user </button>   </td>
+                    <td> <button class="modifer " onclick = "zonModif(${users.idUser})">modif user </button>   </td>
                     <td><input class="input" id="newfisrt" ${users.hid} value=" ${users.fisrt_name}"  ></td>
                     <td><input class="input" id="newlast" ${ users.hid} value="${users.last_name} "  ></td>
-                    <td> <button class="modifer " onclick = "modiferUser(${users.idUser})">MODIF </button>   </td>
+                    <td> <button class="modifer " onclick = "modiferUser(${users.idUser})" ${ users.hid}>validate </button>   </td>
                    
                     </td>
                  
