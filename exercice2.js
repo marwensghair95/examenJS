@@ -1,9 +1,14 @@
-const l1=[9,9,9,9,9,9,9,];
+const l1=[9,9,9,9,9,9,9];
 const l2=[9,9,9,9];
-let lr=[];
-let l=[];
-let x="";
-let y="";
+
+console.log(l1);
+console.log(l2);
+
+let l=[]; //somme de deux tableau entier
+let lr=[];//somme de deux tableau chaine
+
+let x=""; //table 1 entier
+let y=""; //table 2 entier
 
 const l11= l1.reverse();
 const l12= l2.reverse();
@@ -11,12 +16,12 @@ const l12= l2.reverse();
 l11.forEach(i => {
    x+=i.toString();
 });
-console.log(x);
+
 
 l12.forEach(j => {
     y+=j.toString();
  });
- console.log(y);
+
 
  const somme= parseInt(x)+ parseInt(y);
  const sommeS=somme.toString();

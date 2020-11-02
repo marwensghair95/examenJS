@@ -1,0 +1,15 @@
+table{
+    width: 60%;
+  }
+  table,
+  td {
+      border: 0px solid #333;
+     
+  }
+  
+  thead {
+      background-color: #333;
+      color: #fff;
+      
+  }
+  
