@@ -7,7 +7,7 @@ formAdmin.addEventListener("submit" ,(e)=> {
     f_name=formAdmin.fisrt_name.value;
     l_name=formAdmin.last_name.value;
     idUser= Math.floor(Math.random() * 1000);
-    hidd= "hidden" ;
+    hidd="hidden";
              user={fisrt_name:f_name,last_name:l_name,idUser,hid:hidd}
             
              const unique = users.find((usera) => usera.fisrt_name == f_name);
@@ -40,10 +40,11 @@ formAdmin.addEventListener("submit" ,(e)=> {
                     <td>  ${users.fisrt_name} </td>
                     <td>  ${users.last_name} </td>
                     <td> <button class="modifer " onclick = "modiferUser(${users.idUser})">MODIF </button>   </td>
-                    <td> <button class="delete " onclick = "deleteUser(${users.idUser})"  >DELETE </button> </td>
                    
-                    <td><input class="input" id="newfisrt"  value=" ${users.fisrt_name}"  ${users.hid}></td>
-                    <td><input class="input" id="newlast"  value="${users.last_name} "  ${users.hid}  ></td>
+                    <td> <button class="delete " onclick = "deleteUser(${users.idUser})"  >DELETE </button> </td>
+                    <td> <button class="modifer " onclick = "zonModif(${users.idUser})">shw </button>   </td>
+                    <td><input class="input" id="newfisrt" ${users.hid} value=" ${users.fisrt_name}"  ></td>
+                    <td><input class="input" id="newlast" ${ users.hid} value="${users.last_name} "  hidden></td>
                    
                     </td>
                  
@@ -72,25 +73,17 @@ formAdmin.addEventListener("submit" ,(e)=> {
         
         
         const modiferUser = (id) => {
-            let use = users.find((user) => user.idUser == id);
-            
-            users.map(user=> {
-                if (user.idUser == use.idUser) {
-                   
-                    user.hid ="visible";
-                }
-                    return  user
-                           });
-               localStorage.setItem('users', JSON.stringify(users))
+           
             newfirst=document.getElementById("newfisrt").value;
             newlast=document.getElementById("newlast").value;
                 console.log(newfirst,newlast);
-        
+          let use = users.find((user) => user.idUser == id);
+            
                 users.map(user=> {
                     if (user.idUser == use.idUser) {
                         user.fisrt_name=newfirst;
                         user.last_name=newlast;
-                       
+                        user.hid="hidden"; 
                     }
                         return  user
                                });
@@ -98,4 +91,17 @@ formAdmin.addEventListener("submit" ,(e)=> {
                    window.location.reload()     
         
         }   
-      
+        const zonModif = (id) => {
+                
+          let use = users.find((user) => user.idUser == id);
+            
+                users.map(user=> {
+                    if (user.idUser == use.idUser) {
+                      user.hid="visible";     
+                    }
+                        return  user
+                               });
+                   localStorage.setItem('users', JSON.stringify(users))
+                   window.location.reload()     
+        
+        }   
